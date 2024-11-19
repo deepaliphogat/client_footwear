@@ -24,11 +24,16 @@ class LoginController extends GetxController {
   bool otpFieldShow = false;
   int? otpSend;
   int? otpEntered;
+  int? otpEnter;
+
+  User? loginUser;
+
 
   @override
   void onReady() {
     Map<String, dynamic>? user = box.read('loginUser');
     if (user!= null) {
+      loginUser=User.fromJson(user);
       Get.to(const HomePage());
     }
     super.onReady();
