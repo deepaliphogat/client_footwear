@@ -1,3 +1,4 @@
+import 'package:client_footwear/controller/home_controller.dart';
 import 'package:client_footwear/controller/login_controller.dart';
 import 'package:client_footwear/firebase_options.dart';
 import 'package:client_footwear/pages/home_page.dart';
@@ -7,13 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'pages/login_page.dart';
+import 'package:client_footwear/pages/login_page.dart';
 
 void main() async {
   await GetStorage.init();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: firebaseOptions);
   Get.put(LoginController());
+  Get.put(HomeController());
   runApp(const MyApp());
 }
 
